@@ -6,14 +6,14 @@
 }
 
 body {
-  
   background-color: #1C1C1C;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  height: 100vh; /* Use 100vh to avoid overflow */
   overflow: hidden;
 }
+
 .calculator-container {
   width: 90vw;
   max-width: 400px;
@@ -26,6 +26,7 @@ body {
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
   animation: fadeIn 0.5s ease; /* Fade-in effect on load */
+  margin-top: 20px; /* Space on top */
 }
 
 /* Keyframes for fade-in animation */
@@ -44,7 +45,6 @@ body {
 .brand-name h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for better text contrast */
 }
-
 
 .brand-name {
   margin-bottom: 15px;
@@ -103,7 +103,6 @@ body {
   visibility: visible; /* Show icon on hover */
   opacity: 1; /* Fade-in effect */
 }
-
 
 .calculator-buttons {
   width: 100%;
@@ -175,6 +174,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    height: auto; /* Allow body to grow with content on smaller screens */
+    overflow: visible; /* Allow scrolling */
+  }
+
   #screen {
     font-size: 2rem;
     padding: 10px;
@@ -183,6 +187,10 @@ body {
   .button {
     padding: 18px;
     font-size: 1.2rem;
+  }
+
+  .calculator-container {
+    margin-top: 10px; /* Reduced space on top for smaller screens */
   }
 }
 
@@ -195,5 +203,9 @@ body {
   .button {
     padding: 15px;
     font-size: 1rem;
+  }
+
+  .calculator-container {
+    margin-top: 5px; /* Minimal space for mobile */
   }
 }
