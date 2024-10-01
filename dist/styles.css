@@ -28,12 +28,6 @@ body {
   animation: fadeIn 0.5s ease; /* Fade-in effect on load */
 }
 
-/* Hover effect */
-.calculator-container:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
-}
-
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {
   from {
