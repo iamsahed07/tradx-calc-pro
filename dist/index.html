@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRADX CALC PRO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="TradxLogo.svg">
+</head>
+<body>
+  <div class="calculator-container">
+    
+    <!-- Brand Name -->
+    <div class="brand-name">
+      <h1>TRADX CALC PRO</h1>
+    </div>
+
+    <div class="calculator-screen">
+  <input type="text" id="screen" disabled>
+  <span class="copy-icon" onclick="copyToClipboard()">📋</span> <!-- Copy icon -->
+</div>
+
+    
+    <!-- Calculator Buttons -->
+    <div class="calculator-buttons">
+      <!-- Function and Scientific Buttons -->
+      <button class="button function" onclick="clearScreen()">AC</button>
+      <button class="button function" onclick="toggleSign()">+/-</button>
+      <button class="button function" onclick="deleteDigit()">DEL</button>
+      <button class="button operator" onclick="addOperation('/')">÷</button>
+
+      <button class="button function" onclick="currentInput = Math.log(currentInput); updateScreen(currentInput);">log</button>
+      <button class="button function" onclick="currentInput = Math.sin(currentInput); updateScreen(currentInput);">sin</button>
+      <button class="button function" onclick="currentInput = Math.cos(currentInput); updateScreen(currentInput);">cos</button>
+      <button class="button function" onclick="currentInput = Math.tan(currentInput); updateScreen(currentInput);">tan</button>
+
+      <button class="button" onclick="appendNumber('7')">7</button>
+      <button class="button" onclick="appendNumber('8')">8</button>
+      <button class="button" onclick="appendNumber('9')">9</button>
+      <button class="button operator" onclick="addOperation('*')">×</button>
+
+      <button class="button" onclick="appendNumber('4')">4</button>
+      <button class="button" onclick="appendNumber('5')">5</button>
+      <button class="button" onclick="appendNumber('6')">6</button>
+      <button class="button operator" onclick="addOperation('-')">−</button>
+
+      <button class="button" onclick="appendNumber('1')">1</button>
+      <button class="button" onclick="appendNumber('2')">2</button>
+      <button class="button" onclick="appendNumber('3')">3</button>
+      <button class="button operator" onclick="addOperation('+')">+</button>
+
+      <button class="button zero capsule" onclick="appendNumber('0')">0</button>
+      <button class="button" onclick="appendNumber('.')">.</button>
+      <button class="button operator equals" onclick="calculate()">=</button>
+
+      <!-- Scientific Buttons -->
+      <button class="button function" onclick="currentInput = Math.sqrt(currentInput); updateScreen(currentInput);">√</button>
+      <button class="button function" onclick="currentInput = 3.14159265359; updateScreen(currentInput);">π</button>
+      <button class="button function" onclick="let fact = 1; for (let i = 1; i <= currentInput; i++) { fact *= i; } currentInput = fact.toString(); updateScreen(currentInput);">x!</button>
+      <button class="button function" onclick="currentInput = Math.round(Math.random() * 100); updateScreen(currentInput);">random</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

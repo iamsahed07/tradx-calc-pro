@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  
+  background-color: #1C1C1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  overflow: hidden;
+}
+.calculator-container {
+  width: 90vw;
+  max-width: 400px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2c2c2c, #4f4f4f);
+  border-radius: 30px; /* Increased for softer edges */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+  animation: fadeIn 0.5s ease; /* Fade-in effect on load */
+}
+
+/* Hover effect */
+.calculator-container:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move upward slightly */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Add text shadow to child elements for better readability */
+.brand-name h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for better text contrast */
+}
+
+
+.brand-name {
+  margin-bottom: 15px;
+}
+
+.brand-name h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
+  color: #f39c12;
+  text-align: center;
+}
+
+.calculator-screen {
+  width: 100%;
+  background-color: #000; /* Background color of the calculator screen */
+  border-radius: 20px; /* Rounded corners for the screen */
+  padding: 15px; /* Padding inside the screen */
+  margin-bottom: 20px; /* Space below the screen */
+  display: flex; /* Flexbox for layout */
+  justify-content: flex-end; /* Align text to the right */
+  position: relative; /* Positioning for the copy icon */
+}
+
+#screen {
+  width: 100%; /* Full width for the input */
+  background-color: #000; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  font-size: 2.5rem; /* Font size for the text */
+  text-align: right; /* Align text to the right */
+  padding: 20px; /* Padding inside the input */
+  user-select: none; /* Prevent text selection */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for the screen */
+#screen:hover {
+  background-color: #111; /* Change background color on hover */
+}
+
+/* Copy icon styling */
+.copy-icon {
+  position: absolute; /* Positioning relative to the screen */
+  right: 10px; /* Positioning from the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Centering the icon */
+  font-size: 1.5rem; /* Size of the icon */
+  color: #f39c12; /* Icon color */
+  cursor: pointer; /* Indicate it's clickable */
+  visibility: hidden; /* Hidden by default */
+  transition: visibility 0s, opacity 0.3s ease; /* Transition for visibility */
+}
+
+/* Show the copy icon on hover */
+.calculator-screen:hover .copy-icon {
+  visibility: visible; /* Show icon on hover */
+  opacity: 1; /* Fade-in effect */
+}
+
+
+.calculator-buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.button {
+  background-color: #4F4F4F;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: #555555;
+}
+
+.operator {
+  background-color: #f39c12;
+  color: white;
+}
+
+.operator:hover {
+  background-color: #e67e22;
+}
+
+.function {
+  background-color: #a5a5a5;
+  color: black;
+}
+
+.function:hover {
+  background-color: #909090;
+}
+
+.special {
+  border-radius: 10px; /* Changing shape for specific buttons */
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.capsule {
+  border-radius: 50px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.equals {
+  background-color: #f39c12;
+  border-radius: 10px; /* Apply different shape to equals button */
+  font-weight: bold;
+  color: #fff;
+}
+
+.equals:hover {
+  background-color: #e67e22;
+}
+
+@media (max-width: 768px) {
+  #screen {
+    font-size: 2rem;
+    padding: 10px;
+  }
+
+  .button {
+    padding: 18px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #screen {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+  .button {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
